@@ -17,15 +17,15 @@
 ### **One-Command Deployment:**
 
 ```bash
-curl -s https://raw.githubusercontent.com/Husen2012/odoo19-enterprise-deployment/main/deploy.sh | bash
+curl -s https://raw.githubusercontent.com/Husen2012/odoo19-enterprise/main/deploy.sh | bash
 ```
 
 ### **Or Manual Deployment:**
 
 ```bash
 # Clone repository
-git clone https://github.com/Husen2012/odoo19-enterprise-deployment.git
-cd odoo19-enterprise-deployment
+git clone https://github.com/Husen2012/odoo19-enterprise.git
+cd odoo19-enterprise
 
 # Run deployment
 ./deploy.sh
@@ -331,7 +331,7 @@ curl -s https://raw.githubusercontent.com/Husen2012/odoo19-enterprise-deployment
 
 **🚀 Ready to deploy Odoo 19 Enterprise on any server in minutes!**
 
-**Repository**: https://github.com/Husen2012/odoo19-enterprise-deployment  
+**Repository**: https://github.com/Husen2012/odoo19-enterprise
 **Version**: 1.0.0  
 **Modules**: 719+ Enterprise modules  
 **Status**: Production ready  

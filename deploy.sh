@@ -3,7 +3,7 @@
 #############################################
 # Odoo 19 Enterprise Deployment Script
 # One-command deployment on any server
-# Repository: https://github.com/Husen2012/odoo19-enterprise-deployment
+# Repository: https://github.com/Husen2012/odoo19-enterprise
 #############################################
 
 set -e

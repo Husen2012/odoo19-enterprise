@@ -3,7 +3,7 @@
 ## ⚡ One-Command Installation
 
 ```bash
-curl -s https://raw.githubusercontent.com/Husen2012/odoo19-enterprise-deployment/main/deploy.sh | bash
+curl -s https://raw.githubusercontent.com/Husen2012/odoo19-enterprise/main/deploy.sh | bash
 ```
 
 ## 📋 Prerequisites
@@ -30,8 +30,8 @@ Before installation, ensure you have:
 ### Step 1: Clone Repository
 
 ```bash
-git clone https://github.com/Husen2012/odoo19-enterprise-deployment.git
-cd odoo19-enterprise-deployment
+git clone https://github.com/Husen2012/odoo19-enterprise.git
+cd odoo19-enterprise
 ```
 
 ### Step 2: Make Scripts Executable
