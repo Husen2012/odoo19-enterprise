@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:17
+    container_name: odoo19-enterprise-db
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo19enterprise@2025
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ./postgresql:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - odoo_network
+
+  odoo19:
+    image: odoo:19
+    container_name: odoo19-enterprise
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "10024:8069"
+      - "20024:8072"
+    volumes:
+      - ./addons:/mnt/extra-addons
+      - ./enterprise:/mnt/enterprise-addons
+      - ./config:/etc/odoo
+      - ./sessions:/var/lib/odoo/sessions
+      - ./filestore:/var/lib/odoo/filestore
+      - ./ssl:/etc/ssl/odoo:ro
+    environment:
+      - HOST=db
+      - PORT=5432
+      - USER=odoo
+      - PASSWORD=odoo19enterprise@2025
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8069/web/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - odoo_network
+    deploy:
+      resources:
+        limits:
+          memory: 2560M
+        reservations:
+          memory: 2048M
+
+networks:
+  odoo_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.35.0.0/16

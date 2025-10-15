@@ -1,0 +1,85 @@
+# Environment files
+.env
+*.env
+
+# Odoo data directories
+filestore/
+sessions/
+postgresql/
+backups/
+enterprise/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker volumes
+volumes/
+
+# SSL certificates
+ssl/
+*.pem
+*.crt
+*.key
+
+# Custom addons (if you want to exclude them)
+# addons/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Node modules (if any)
+node_modules/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Test files
+test_*
+*_test.py
+
+# Local configuration
+local_settings.py
+settings_local.py
